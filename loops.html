@@ -1,0 +1,43 @@
+
+
+<script>
+// Sat 10/02/2021;
+
+// WHILE
+    var counter = 0;
+    console.log("WHILE loop");
+    while (counter < 10) {
+        console.log(counter);
+        counter = counter + 1;
+    }
+    console.log("last value of counter " + counter);
+
+// DO
+    var counter = 0;
+    console.log("DO loop");
+    do {
+        console.log(counter);
+        counter = counter + 1;
+    } while(counter < 10);
+    console.log('last value of counter: ' + counter);
+
+     //Both produce the same results. 
+
+// Print 1 to 1000
+    var i = 1; 
+    console.log("Using WHILE: Print 1 to 1000");
+    while (i<=1000) {
+        console.log(i);
+        i = i + 1;        
+    }
+
+    // Print multiples of 5 from 1 to 100
+    var j = 1;
+    console.log("Using DO: Print multiples of 5 from 1 to 100");
+    do {
+        console.log(j);
+        j = j * 5;
+    } while(j <= 100);
+
+
+</script>
