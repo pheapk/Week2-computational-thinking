@@ -1,4 +1,7 @@
-<script>
+</html>
+<h2> check the console </h2>
+<script> 
+//Sun 10/3/2021 
 /*
 Instructions
 Given the function getProduct, 
@@ -11,6 +14,13 @@ Given the function getProduct,
 
 function getProduct(productId) {
   //write your code here
+  var product = {
+    id:productId,
+    serialNumber:"WD579000",
+    manufacturer:"Apple",
+    price: 1500
+  }
+  return product; 
 }
 //open your browser console to check the results
 console.log('result: ' + JSON.stringify(getProduct(1)));
@@ -19,4 +29,47 @@ console.log('result: ' + JSON.stringify(getProduct(1)));
 if (typeof module !== 'undefined') {
   module.exports = getProduct;
 }
+
+// result: {"id":1,"serialNumber":"WD579000","manufacturer":"Apple","price":1500}
 </script>
+
+
+<!--
+Objects - Step 2
+
+Adding to Objects
+To add properties to objects, it is best to do so using the . operator.
+
+Note: Properties are key: value pair entries in objects. For example, name: 'Isaac Asimov'
+
+let person = {
+    name: 'Isaac Asimov',
+    occupation: 'science fiction writer',
+}
+ 
+person.number_of_books = 500
+This code will result in adding the key "number_of_books" to the object person, and assign a value of "500" to that key. The new object will look like this:
+
+person = {
+    name: 'Isaac Asimov',
+    occupation: 'science fiction writer',
+    number_of_books: 500
+}
+Removing Keys from Objects
+We can remove a key from an object by using the delete keyword.
+
+let person = {
+    name: 'Isaac Asimov',
+    occupation: 'science novels writer',
+    number_of_books: 500,
+    university: 'University of Toronto'
+}
+delete person.university; // returns true
+This will remove the key:value pair "university: University of Toronto" from the person object.
+
+Task Instructions
+Given the bike object, open the objects-02 folder, in main.js, change the speed value to 12, and then return the new value.
+
+When you're done, check the task as completed.
+--> 
+</html>
