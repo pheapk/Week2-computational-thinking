@@ -1,4 +1,5 @@
 //Set global variable that would contain the position, velocity and the html element "ball"
+var ball = document.getElementById("ball");
 
 //write a function that can change the position of the html element "ball"
 function moveBall() {
