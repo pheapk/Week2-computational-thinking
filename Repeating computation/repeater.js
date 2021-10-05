@@ -5,3 +5,5 @@ function sayHello() {
 }
 //Write another function here that will print "Hello World" to the console every 3 seconds
 setInterval(sayHello,3000) ;
+
+// to clear the Interval use: window.clearTimeout(timeoutID)
