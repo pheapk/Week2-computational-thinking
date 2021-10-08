@@ -1,5 +1,6 @@
 //Set global variable that would contain the position, velocity and the html element "ball"
-var ball = document.getElementById("ball");
+
+var bll = document.getElementById('ball');
 
 var velocity = 100;
 var positionX = 0;
@@ -14,17 +15,19 @@ function moveBall() {
 
   if (positionX >= Xmax) {
     reverse = true;
-  }else{
+  }else if (positionX <= Xmin) {
     reverse = false;
   }
 
-  if (reverse == false){
+  if (reverse === false) {
     positionX = positionX + velocity;
   }else {
     positionX = positionX - velocity;
   }
-  ball.style.left = positionX;
+  //ball.style.left = positionX + 'px';
+  console.log("position: " + positionX);
+  //bll.style.left = positionX; //error
 }
 
 // This call the moveBall function every 100ms
-setInterval(moveBall, 100);
+setInterval(moveBall, 5000);

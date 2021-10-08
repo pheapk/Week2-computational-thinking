@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simulation - ball movement</title>
+</head>
+<body>
+    </body>
+
+
+<!-- <div id="ball" style="
+  z-index:5;
+  position:absolute;
+  left:5px;
+  top:5px;
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  background:green"></div>
+
+<div style="
+    border: 1px solid gray;
+    width: 550px;
+    height:350px;
+    position:absolute;
+    left:5px;
+    top:5px;">
+    </div> -->
+    <div style="
+    border: 1px solid gray;
+    width: 450px;
+    height:300px;
+    position:absolute;
+    left:5px;
+    top:5px;">
+    </div>
+
+<script src="./magic.js"></script>
+
+<script>
+
+// YOUR CODE 
+// ----------------
+var positionX = 5;
+var positionY = 5;
+
+var velocityX = 15;
+var velocityY = 5;
+
+// var velocityX2 = 50;
+// var velocityY2 = 5;
+
+//var ball = document.getElementById('ball');
+var ball = create();
+size(ball, 50,50);
+
+// var ball2 = create();
+// size(ball2,10,10);
+
+// var ball3 = create();
+// size(ball3,100,100);
+
+var leftEdge = 5;
+var rightEdge = 400;
+var topEdge = 5;
+var bottomEdge = 250;
+
+var reverseX = false;
+var reverseY = false;
+
+
+function moveBall (){    
+    if (positionX >= rightEdge) {
+        reverseX = true;    
+    }else if (positionX <= leftEdge){ // first time
+        reverseX = false;        
+    }
+    
+    if (positionY <= topEdge){ 
+        reverseY = false;        
+    }else if (positionY >= bottomEdge){ 
+        reverseY = true;        
+    }
+    
+    if (reverseX === false) {         
+        positionX = positionX + velocityX;        
+    } else {         
+        positionX = positionX - velocityX;        
+    }
+    
+    if (reverseY === false) {         
+        positionY = positionY + velocityY;        
+    } else {         
+        positionY = positionY - velocityY;        
+    }
+
+    colorRandom(ball);
+    
+    // ball.style.left  = positionX + 'px';    
+    // ball.style.top  = positionY + 'px';          
+
+    moveTo(ball,positionX,positionY);
+
+
+    console.log("Ball positionX: " + positionX);
+    console.log("Ball positionY: " + positionY);
+    console.log("Ball velocityX: " + velocityX);
+    console.log("Ball velocityY: " + velocityY);
+    console.log("================");
+    
+}
+setInterval(moveBall,50)
+
+</script>
+
+
+</html>

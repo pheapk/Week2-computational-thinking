@@ -1,0 +1,132 @@
+<div id="ball" style="
+  z-index:5;
+  position:absolute;
+  left:5px;
+  top:5px;
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  background:green"></div>
+
+<div id="ball2" style="
+  z-index:5;
+  position:absolute;
+  left:50px;
+  top:50px;
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  background:red"></div>
+  <!-- <div id="ball3" style="
+  z-index:5;
+  position:absolute;
+  left:25px;
+  top:25px;
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  background:blue"></div> -->
+
+<div style="
+    border: 1px solid gray;
+    width: 550px;
+    height:350px;
+    position:absolute;
+    left:5px;
+    top:5px;">
+    </div>
+<script>
+
+// YOUR CODE 
+// ----------------
+
+var positionX = 5;
+var velocityX = 20;
+var positionY = 5;
+var velocityY = 10;
+
+var positionX2 = 15;
+var velocityX2 = 35;
+var positionY2 = 5;
+var velocityY2 = 15;
+
+var ball = document.getElementById('ball');
+var ball2 = document.getElementById('ball2');
+
+var leftEdge = 5;
+var rightEdge = 500;
+var topEdge = 5;
+var bottomEdge = 300;
+
+var reverseX = false;
+var reverseY = false;
+
+var reverseX2 = false;
+var reverseY2 = false;
+
+function moveBall (){    
+    if (positionX >= rightEdge) {
+        reverseX = true;    
+    }else if (positionX <= leftEdge){ // first time
+        reverseX = false;        
+    }
+    
+    if (positionY <= topEdge){ 
+        reverseY = false;        
+    }else if (positionY >= bottomEdge){ 
+        reverseY = true;        
+    }
+    
+    if (reverseX === false) {         
+        positionX = positionX + velocityX;        
+    } else {         
+        positionX = positionX - velocityX;        
+    }
+    
+    if (reverseY === false) {         
+        positionY = positionY + velocityY;        
+    } else {         
+        positionY = positionY - velocityY;        
+    }
+
+    if (positionX2 >= rightEdge) {
+        reverseX2 = true;    
+    }else if (positionX2 <= leftEdge){ // first time
+        reverseX2 = false;        
+    }
+    
+    if (positionY2 <= topEdge){ 
+        reverseY2 = false;        
+    }else if (positionY2 >= bottomEdge){ 
+        reverseY2 = true;        
+    }
+
+    if (reverseX2 === false) {         
+        positionX2 = positionX2 + velocityX2;        
+    } else {         
+        positionX2 = positionX2 - velocityX2;        
+    }
+    
+    if (reverseY2 === false) {         
+        positionY2 = positionY2 + velocityY2;        
+    } else {         
+        positionY2 = positionY2 - velocityY2;        
+    }
+
+    ball.style.left  = positionX + 'px';    
+    ball.style.top  = positionY + 'px';
+
+    ball2.style.left  = positionX2 + 'px';    
+    ball2.style.top  = positionY2 +  'px';
+
+    
+    console.log("Ball positionX: " + positionX);
+    console.log("Ball positionY: " + positionY);
+    console.log("Ball velocityX: " + velocityX);
+    console.log("Ball velocityY: " + velocityY);
+    console.log("================");
+    
+}
+setInterval(moveBall,100)
+
+</script>
